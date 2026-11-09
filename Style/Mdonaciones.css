@@ -1,0 +1,397 @@
+@font-face {
+    font-family: 'Comfortaa';
+    src: url('../fonts/Comfortaa-Regular.ttf');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Comfortaa';
+    src: url('../fonts/Comfortaa-SemiBold.ttf');
+    font-weight: 600;
+}
+@font-face {
+    font-family: 'Comfortaa';
+    src: url('../fonts/Comfortaa-Bold.ttf');
+    font-weight: 700;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comfortaa', sans-serif;
+    background-color: #d9ecff;
+    color: #000;
+}
+
+/* ===================== HEADER ===================== */
+
+header {
+    background-color: #ffffff;
+}
+
+#Encabezado {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    padding: 10px 0 10px;
+    height: 140px;
+}
+
+#Encabezado > div:first-child {
+    height: 180%;
+    display: flex;
+    align-items: center;
+}
+
+#logo {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+#Encabezado a {
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#Encabezado form {
+    display: flex;
+    gap: 6px;
+}
+
+#Encabezado input {
+    padding: 6px;
+    font-family: 'Comfortaa', sans-serif;
+}
+
+#Encabezado button {
+    padding: 6px 10px;
+    cursor: pointer;
+    font-family: 'Comfortaa', sans-serif;
+}
+
+#T1 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    padding: 15px 0;
+}
+
+/* ===================== NAV PRINCIPAL ===================== */
+
+#Busqueda {
+    display: flex;
+    width: 100%;
+    background-color: #d9ecff;
+}
+
+#Busqueda > ul {
+    flex: 1;
+    list-style: none;
+}
+
+#Busqueda > ul > li {
+    position: relative;
+    text-align: center;
+}
+
+#Busqueda a {
+    display: block;
+    padding: 15px 0;
+    color: #000000;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+#Busqueda > ul > li > a {
+    border: 1px solid #000;
+}
+
+#Busqueda a:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+#Busqueda ul ul {
+    display: none;
+    position: absolute;
+    width: 100%;
+    background-color: #222;
+    top: 100%;
+    left: 0;
+    z-index: 200;
+    list-style: none;
+}
+
+#Busqueda ul ul a {
+    color: #fff;
+}
+
+#Busqueda ul li:hover > ul {
+    display: block;
+}
+
+/* ===================== MAIN ===================== */
+
+main {
+    background-color: #ffffff;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* ===================== SECCIONES ===================== */
+
+.seccion {
+    margin-top: 50px;
+}
+
+h2 {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+h2::after {
+    content: "";
+    flex: 1;
+    height: 2px;
+    background-color: #000;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+/* ===================== MENSAJE DONACION ===================== */
+
+.mensaje-donacion {
+    padding: 25px;
+    border-left: 4px solid #000;
+    background-color: #f9f9f9;
+    margin-bottom: 40px;
+    border-radius: 0 8px 8px 0;
+}
+
+.mensaje-donacion p {
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+
+.mensaje-donacion p:last-child {
+    margin-bottom: 0;
+}
+
+/* ===================== GRID DONACIONES ===================== */
+
+.donaciones-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+/* ===================== CARDS DONACION ===================== */
+
+.card-donacion {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.card-donacion p {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* ===================== QR ===================== */
+
+.qr-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+
+#imgqr {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.qr-nombre {
+    font-weight: 700;
+    font-size: 16px !important;
+    margin-top: 10px !important;
+    margin-bottom: 0 !important;
+    text-align: center;
+}
+
+/* ===================== NUMERO NEQUI ===================== */
+
+.nequi-numero {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+}
+
+.numero-label {
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.numero {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.nota {
+    font-size: 13px !important;
+    color: #555;
+    font-style: italic;
+}
+
+/* ===================== OBJETOS ===================== */
+
+.lista-objetos {
+    margin-bottom: 20px;
+}
+
+.lista-objetos p {
+    font-weight: 700;
+    margin-bottom: 10px !important;
+}
+
+.lista-objetos ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.lista-objetos ul li {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 6px;
+}
+
+.direccion-donacion,
+.contacto-donacion {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.btn-whatsapp {
+    text-decoration: none;
+    color: #fff;
+    background-color: #25D366;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.btn-whatsapp:hover {
+    opacity: 0.85;
+}
+
+/* ===================== AGRADECIMIENTO ===================== */
+
+.agradecimiento {
+    background-color: #000;
+    color: #fff;
+    padding: 25px 30px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.agradecimiento p {
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* ===================== FOOTER ===================== */
+
+footer {
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    margin-top: 50px;
+    font-size: 14px;
+}
+
+/* ===================== RESPONSIVE - CELULAR ===================== */
+
+@media (max-width: 768px) {
+
+    #Encabezado {
+        height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+        gap: 10px;
+    }
+
+    #Encabezado > div:first-child {
+        height: 70px;
+    }
+
+    #T1 {
+        font-size: 20px;
+        padding: 10px 15px;
+    }
+
+    #Busqueda {
+        flex-direction: column;
+    }
+
+    #Busqueda > ul > li > a {
+        border: none;
+        border-bottom: 1px solid #000;
+    }
+
+    #Busqueda ul ul {
+        position: static;
+        display: block;
+        background-color: #444;
+    }
+
+    .donaciones-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    #imgqr {
+        width: 180px;
+        height: 180px;
+    }
+}

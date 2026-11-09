@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="Style/index.css">
+        <title>Museo Histórico del Barrio las Américas</title>
+    </head>
+    <body>
+        <header>
+            <section id="Encabezado">
+                <div>
+                    <img src="Style/Logomuseosinfondo.png" alt="Logo del Museo Histórico del Barrio Las Américas" id="logo">
+                </div>
+                <div>
+                    <a href="Mdonaciones.html" title="Donaciones">Donaciones</a>
+                </div>
+                <div>
+                    <a href="#" title="Informacion al Ciudadano">INFORMACIÓN AL CIUDADANO</a>
+                </div>
+                <div>
+                    <form>
+                        <input type="search" placeholder="Buscar en el sitio">
+                        <button type="submit">Buscar</button>
+                    </form>
+                </div>
+            </section>
+            <section>
+                <div>
+                    <h1 id="T1">Museo Histórico del Barrio Las Américas</h1>
+                </div>
+            </section>
+        </header>
+
+        <nav id="Busqueda">
+            <ul>
+                <li>
+                    <a href="index.html" title="Inicio">INICIO</a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="Mvisita.html" title="Visita">VISITA</a>
+                    <ul>
+                        <li><a href="#horario-y-tarifas" title="Horarios y Tarifas">HORARIOS Y TARIFAS</a></li>
+                        <li><a href="#reserva" title="Reserva tu visita">RESERVA TU VISITA</a></li>
+                        <li><a href="#normas" title="Normas de Visita">NORMAS DE VISITA</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="Mmuseo.html" title="Museo">MUSEO</a>
+                    <ul>
+                        <li><a href="#mision-y-vision" title="Misión y Visión">MISION | VISION</a></li>
+                        <li><a href="#historia" title="Historia">HISTORIA</a></li>
+                        <li><a href="#organigrama" title="Organigrama">ORGANIGRAMA</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="Mproyectos.html" title="Proyectos">PROYECTOS</a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="Mpublicaciones.html" title="Publicaciones">PUBLICACIONES</a>
+                    <ul>
+                        <li><a href="#" title="Libros">LIBROS</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="Mcontactos.html" title="Contactos">CONTACTOS</a>
+                </li>
+            </ul>
+        </nav>
+
+        <main>
+            <section>
+                <div class="carrusel">
+                    <div class="carrusel-inner" id="carrusel-inner">
+                        <div class="slide">
+                            <img src="Style/carru1.png" alt="Foto del museo 1">
+                        </div>
+                        <div class="slide">
+                            <img src="Style/carru2.png" alt="Foto del museo 2">
+                        </div>
+                        <div class="slide">
+                            <img src="Style/carru3.png" alt="Foto del museo 3">
+                        </div>
+                        <div class="slide">
+                            <img src="Style/carru4.png" alt="Foto del museo 4">
+                        </div>
+                        <div class="slide">
+                            <img src="Style/carru5.png" alt="Foto del museo 5">
+                        </div>
+                    </div>
+                    <button class="btn-carrusel btn-prev" id="prev">&#8592;</button>
+                    <button class="btn-carrusel btn-next" id="next">&#8594;</button>
+                    <div class="puntos" id="puntos"></div>
+                </div>
+            </section>
+
+            <section id="inicio" class="seccion">
+                <h2>BIENVENIDOS</h2>
+                <div class="card">
+                    <p>Bienvenidos al Museo Histórico del Barrio Las Américas, un espacio dedicado a preservar y compartir la rica historia y cultura de nuestra comunidad. Aquí encontrarás exposiciones fascinantes, programas educativos y eventos especiales que te conectarán con el pasado y el presente de nuestro barrio. ¡Esperamos que disfrutes tu visita!</p>
+                </div>
+
+                <!-- Mensaje de agradecimiento -->
+                <div class="agradecimiento">
+                    <p>🙏 Gracias por creer en nuestra comunidad y en la importancia de preservar nuestra historia. Tu apoyo hace posible que el Museo Las Américas siga siendo un espacio vivo para todos.</p>
+                </div>
+
+            </section>
+        </main>
+
+        <footer>
+            <p> Museo Histórico del Barrio Las Américas - Todos los derechos reservados © 2025</p>
+        </footer>
+
+        <script>
+            const inner = document.getElementById('carrusel-inner');
+            const puntosDiv = document.getElementById('puntos');
+            let actual = 0;
+            const total = 5;
+            let intervalo;
+
+            for(let i = 0; i < total; i++){
+                const p = document.createElement('div');
+                p.className = 'punto' + (i === 0 ? ' activo' : '');
+                p.onclick = () => irA(i);
+                puntosDiv.appendChild(p);
+            }
+
+            function irA(n){
+                actual = (n + total) % total;
+                inner.style.transform = `translateX(-${actual * 100}%)`;
+                document.querySelectorAll('.punto').forEach((p,i) => p.classList.toggle('activo', i === actual));
+            }
+
+            function siguiente(){ irA(actual + 1); }
+            function iniciarAuto(){ intervalo = setInterval(siguiente, 3000); }
+            function detenerAuto(){ clearInterval(intervalo); }
+
+            document.getElementById('prev').onclick = () => { detenerAuto(); irA(actual - 1); iniciarAuto(); };
+            document.getElementById('next').onclick = () => { detenerAuto(); irA(actual + 1); iniciarAuto(); };
+
+            iniciarAuto();
+        </script>
+    </body>
+</html>

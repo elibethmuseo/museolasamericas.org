@@ -1,0 +1,361 @@
+@font-face {
+    font-family: 'Comfortaa';
+    src: url('../fonts/Comfortaa-Regular.ttf');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Comfortaa';
+    src: url('../fonts/Comfortaa-SemiBold.ttf');
+    font-weight: 600;
+}
+@font-face {
+    font-family: 'Comfortaa';
+    src: url('../fonts/Comfortaa-Bold.ttf');
+    font-weight: 700;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comfortaa', sans-serif;
+    background-color: #d9ecff;
+    color: #000;
+}
+
+/* ===================== HEADER ===================== */
+
+header {
+    background-color: #ffffff;
+}
+
+#Encabezado {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    padding: 10px 0 10px;
+    height: 140px;
+}
+
+#Encabezado > div:first-child {
+    height: 180%;
+    display: flex;
+    align-items: center;
+}
+
+#logo {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+#Encabezado a {
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#Encabezado form {
+    display: flex;
+    gap: 6px;
+}
+
+#Encabezado input {
+    padding: 6px;
+    font-family: 'Comfortaa', sans-serif;
+}
+
+#Encabezado button {
+    padding: 6px 10px;
+    cursor: pointer;
+    font-family: 'Comfortaa', sans-serif;
+}
+
+#T1 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    padding: 15px 0;
+}
+
+/* ===================== NAV PRINCIPAL ===================== */
+
+#Busqueda {
+    display: flex;
+    width: 100%;
+    background-color: #d9ecff;
+}
+
+#Busqueda > ul {
+    flex: 1;
+    list-style: none;
+}
+
+#Busqueda > ul > li {
+    position: relative;
+    text-align: center;
+}
+
+#Busqueda a {
+    display: block;
+    padding: 15px 0;
+    color: #000000;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+#Busqueda > ul > li > a {
+    border: 1px solid #000;
+}
+
+#Busqueda a:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+#Busqueda ul ul {
+    display: none;
+    position: absolute;
+    width: 100%;
+    background-color: #222;
+    top: 100%;
+    left: 0;
+    z-index: 200;
+    list-style: none;
+}
+
+#Busqueda ul ul a {
+    color: #fff;
+}
+
+#Busqueda ul li:hover > ul {
+    display: block;
+}
+
+/* ===================== MAIN ===================== */
+
+main {
+    background-color: #ffffff;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* ===================== NAV INTERNA ===================== */
+
+.nav-interna {
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    z-index: 100;
+    padding: 12px 0;
+}
+
+.nav-interna ul {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-interna a {
+    text-decoration: none;
+    font-weight: 700;
+    color: #000;
+}
+
+.nav-interna a:hover {
+    text-decoration: underline;
+}
+
+/* ===================== BARRA SCROLL ===================== */
+
+#barra-scroll {
+    height: 4px;
+    width: 0%;
+    background-color: #000;
+    position: sticky;
+    top: 48px;
+    z-index: 99;
+    transition: width 0.1s ease;
+}
+
+/* ===================== SECCIONES ===================== */
+
+.seccion {
+    margin-top: 50px;
+}
+
+h2 {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+h2::after {
+    content: "";
+    flex: 1;
+    height: 2px;
+    background-color: #000;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+/* ===================== INTRO LIBROS ===================== */
+
+#Libros > div > div > p {
+    padding: 20px;
+    border-left: 4px solid #000;
+    background-color: #f9f9f9;
+    margin-bottom: 16px;
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+/* ===================== CONTENIDO LIBRO ===================== */
+
+.contenido-libro p {
+    line-height: 1.8;
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+
+#imglibroforjando {
+    width: 100%;
+    max-height: 700px;
+    object-fit: contain;
+    display: block;
+    margin: 25px auto 8px;
+}
+
+.pie-foto {
+    display: block;
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 20px;
+    padding: 8px;
+    background-color: #f9f9f9;
+    border-left: 3px solid #ccc;
+}
+
+/* ===================== LISTA ADQUIRIR ===================== */
+
+.lista-adquirir {
+    list-style: disc;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.lista-adquirir li {
+    margin-bottom: 10px;
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+.lista-adquirir a {
+    color: #000;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.lista-adquirir a:hover {
+    color: #333;
+}
+
+/* ===================== AGRADECIMIENTO ===================== */
+
+.agradecimiento {
+    background-color: #000;
+    margin-top: 30px;
+    color: #fff;
+    padding: 25px 30px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.agradecimiento p {
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* ===================== FOOTER ===================== */
+
+footer {
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    margin-top: 50px;
+    font-size: 14px;
+}
+
+/* ===================== RESPONSIVE - CELULAR ===================== */
+
+@media (max-width: 768px) {
+
+    #Encabezado {
+        height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+        gap: 10px;
+    }
+
+    #Encabezado > div:first-child {
+        height: 70px;
+    }
+
+    #T1 {
+        font-size: 20px;
+        padding: 10px 15px;
+    }
+
+    #Busqueda {
+        flex-direction: column;
+    }
+
+    #Busqueda > ul > li > a {
+        border: none;
+        border-bottom: 1px solid #000;
+    }
+
+    #Busqueda ul ul {
+        position: static;
+        display: block;
+        background-color: #444;
+    }
+
+    .nav-interna ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    #imglibroforjando {
+        max-height: 350px;
+    }
+}
